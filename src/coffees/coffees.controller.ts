@@ -8,14 +8,16 @@ import {
   Param,
   Patch,
   Post,
+  Query,
   Res,
 } from '@nestjs/common';
 
 @Controller('coffees')
 export class CoffeesController {
   @Get()
-  findAll(@Res() response): void {
-    response.status(HttpStatus.OK).send('This action returns all coffees');
+  findAll(@Res() response, @Query() query): void {
+    const { limit,offset,abc} = query;
+    response.status(HttpStatus.OK).send(`This action returns all coffees (limit: ${limit}, offset: ${offset}, abc: ${abc})`);
   }
 
   @Get(':id')
