@@ -25,13 +25,14 @@ export class CoffeesController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id: number) {
    return this.coffeesService.findOne(id);
   }
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
   create(@Body() createCoffeeDto: CreateCoffeeDto) {
+    console.log(createCoffeeDto instanceof CreateCoffeeDto);
   return this.coffeesService.create(createCoffeeDto);
   }
 

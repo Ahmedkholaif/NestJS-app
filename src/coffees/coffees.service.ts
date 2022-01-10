@@ -26,8 +26,8 @@ export class CoffeesService {
     return this.coffees;
   }
 
-  findOne(id: string): Coffee {
-    const coffee = this.coffees.find(coffee => coffee.id === +id);
+  findOne(id: number): Coffee {
+    const coffee = this.coffees.find(coffee => coffee.id === id);
     if (!coffee) {
       // throw new HttpException(`Coffee #${id} not found`, HttpStatus.NOT_FOUND);
       throw new NotFoundException(`Coffee #${id} not found`);
