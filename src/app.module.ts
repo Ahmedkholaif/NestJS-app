@@ -15,7 +15,7 @@ import { CoffeesModule } from './coffees/coffees.module';
     // entities: [__dirname + '/**/*.entity{.ts,.js}'],
     autoLoadEntities: true,
     applicationName: 'Coffee',
-    synchronize: true, // should be disabled on production - sync db with every restart
+    // synchronize: true, // should be disabled on production - sync db with every restart
   })],
   controllers: [AppController],
   providers: [AppService],
